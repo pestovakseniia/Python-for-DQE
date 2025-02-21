@@ -10,14 +10,6 @@
 # import a 'random' module to facilitate work with random values
 import random
 
-# a swap helper function creation. Its purpose is to change one list's element with another
-def swap(user_list, index1, index2):
-    # temporary variable to store result of list[index1] value, it is needed because the next step overwrites
-    # the value of list[index1] with a new value of list[index2]
-    temp = user_list[index1]
-    user_list[index1] = user_list[index2]
-    user_list[index2] = temp
-
 # a bubble sort algorithm implementation. It compares two neighboring elements and swaps them if the left element is
 # greater than the right element.
 def bubble_sort(user_list):
@@ -26,11 +18,11 @@ def bubble_sort(user_list):
     for i1 in range(len(user_list)):
         for i2 in range(len(user_list)-1):
             if user_list[i2] > user_list[i2+1]:
-                swap(user_list, i2, i2+1)
+                user_list[i2], user_list[i2+1] = user_list[i2+1], user_list[i2]
 
 # implementation of a function that calculates average of even and odd numbers separately. The function's output is a
 # dictionary
-def calculate_average(user_list) -> dict:
+def calculate_average(user_list):
     sum_even = 0        # variable to store the sum of all even elements is a list
     sum_odd = 0     # variable to store the sum of all odd elements is a list
     count_even = 0      # variable to store the number of all even elements in a list
@@ -52,7 +44,7 @@ def calculate_average(user_list) -> dict:
 
     # the result of a function is a dictionary with keys and corresponding values
     # round function is applied to make an output more appealing
-    return {'average_even': round(avg_even, 2), 'average_odd': round(avg_odd, 2)}
+    return avg_even, avg_odd
 
 # using a list comprehension, I create a list of 100 random numbers from 0 to 1000 with a step 1
 my_list = [random.randrange(0, 1000, 1) for i in range(100)]
@@ -67,4 +59,5 @@ bubble_sort(my_list)
 print(f"sorted list: {my_list}")
 
 # call a function that calculates average of even and odd numbers and print the result
-print(calculate_average(my_list))
+avgerage_even, avgerage_odd = calculate_average(my_list)
+print(f"average for even numbers: {round(avgerage_even, 2)}, average for odd numbers: {round(avgerage_odd, 2)}")
