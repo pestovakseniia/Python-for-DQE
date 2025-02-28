@@ -3,16 +3,21 @@ import string
 
 # Function to normalize letter case
 def normalizeLetterCase(text):
-    list_of_strings = filter(bool, text.split('.'))  # Split the text into sentences
-    list_of_strings = [sentence.lower() for sentence in list_of_strings]  # Convert all letters to lowercase
+    # Convert all letters to lowercase
+    text = text.lower()
+    # Remove unnecessary new line characters
+    text = text.replace('\n    \n    \n', '').replace(':\n     ', ': ').replace('     ', '')
 
-    result = []  # Variable to store the final result
-    for sentence in list_of_strings:  # Iterate over each sentence
+    list_of_strings = filter(bool, text.split('.'))  # Split the text into sentences
+
+    result = [] # Variable to store the final result
+    for sentence in list_of_strings:     # Iterate over each sentence
         first_letter = re.search(r'[a-zA-Z0-9]', sentence).group()  # Find the first non-whitespace character
         # Create a new sentence with an uppercase first letter
-        new_sentence = sentence[:sentence.find(first_letter)] + first_letter.capitalize() + sentence[sentence.find(first_letter) + 1:]
-        result.append(new_sentence)  # Add the modified sentence to the result
-    result = '.'.join(result)  # Combine all sentences back into a single text
+        new_sentence = sentence[:sentence.find(first_letter)] + first_letter.capitalize() + sentence[sentence.find(
+            first_letter) + 1:]
+        result.append(new_sentence) # Add the modified sentence to the result
+    result = '.'.join(result)
     return result
 
 # Function to construct a sentence using the last words of each sentence in the original text
@@ -60,4 +65,4 @@ if __name__ == '__main__':
     # Call previously defined functions
     print(f"\n\033[45mSentence from last words:\033[0m {buildSentenceFromLastWords(normalizeLetterCase(task_string))}.")
     print(f"\n\033[45mText after corrections:\033[0m \n{correctSpellingMistake(normalizeLetterCase(task_string))}.")
-    print(f"\n\n\033[45mNumber of whitespaces:\033[0m {calculateWhitespaces(normalizeLetterCase(task_string))}")
+    print(f"\n\033[45mNumber of whitespaces:\033[0m {calculateWhitespaces(normalizeLetterCase(task_string))}")
