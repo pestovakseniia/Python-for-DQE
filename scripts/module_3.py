@@ -6,13 +6,13 @@ def normalizeLetterCase(text):
     # Convert all letters to lowercase
     text = text.lower()
     # Remove unnecessary new line characters
-    text = text.replace('\n    \n    \n', '').replace(':\n     ', ': ').replace('     ', '')
+    text = text.replace('\n    \n    \n ', '').replace(':\n     ', ': ').replace('     ', '')
 
     list_of_strings = filter(bool, text.split('.'))  # Split the text into sentences
 
     result = [] # Variable to store the final result
     for sentence in list_of_strings:     # Iterate over each sentence
-        first_letter = re.search(r'[a-zA-Z0-9]', sentence).group()  # Find the first non-whitespace character
+        first_letter = re.search(r'[a-zA-Z0-9а-яА-Я]', sentence).group()  # Find the first non-whitespace character
         # Create a new sentence with an uppercase first letter
         new_sentence = sentence[:sentence.find(first_letter)] + first_letter.capitalize() + sentence[sentence.find(
             first_letter) + 1:]
