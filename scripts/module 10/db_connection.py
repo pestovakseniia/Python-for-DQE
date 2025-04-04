@@ -1,0 +1,5 @@
+SERVER = 'localhost'
+PORT = '5432'
+DB_NAME = 'module10'
+USER = 'postgres'
+PASSWORD = '12345'

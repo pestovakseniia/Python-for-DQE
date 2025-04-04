@@ -1,0 +1,48 @@
+<records>
+    <record>
+        <type>News</type>
+        <text>В городе состоялось открытие нового музея современного искусства.</text>
+        <city>Берлин</city>
+    </record>
+    <record>
+        <type>News</type>
+        <text>На курортах Турции начинается туристический сезон с новыми развлечениями.</text>
+        <city>Анталья</city>
+    </record>
+    <record>
+        <type>News</type>
+        <text>В Токио прошел фестиваль аниме с тысячами участников в костюмах.</text>
+        <city>Токио</city>
+    </record>
+    <record>
+        <type>PrivateAd</type>
+        <text>Продается автомобиль в отличном состоянии. Возможен торг.</text>
+        <expiration_date>2025-06-10</expiration_date>
+    </record>
+    <record>
+        <type>PrivateAd</type>
+        <text>Отдам котенка в добрые руки. Ласковый, приучен к лотку.</text>
+        <expiration_date>2025-05-25</expiration_date>
+    </record>
+    <record>
+        <type>PrivateAd</type>
+        <text>Сниму комнату в центре города. Рассмотрю любые варианты.</text>
+        <expiration_date>2025-07-01</expiration_date>
+    </record>
+    <record>
+        <type>Horoscope</type>
+        <text>Лев: день подходит для творчества и поиска новых идей.</text>
+    </record>
+    <record>
+        <type>Horoscope</type>
+        <text>Дева: уделите внимание здоровью, полезны прогулки на свежем воздухе.</text>
+    </record>
+    <record>
+        <type>Horoscope</type>
+        <text>Весы: день благоприятен для новых знакомств и общения.</text>
+    </record>
+    <record>
+        <type>Horoscope</type>
+        <text>Скорпион: будьте внимательны к деталям, возможны неожиданные события.</text>
+    </record>
+</records>
