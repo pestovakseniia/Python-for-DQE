@@ -1,4 +1,24 @@
-import db_connection_class
+import subprocess
+import sys
+
+required_modules = [
+    "psycopg2",
+    "geopy"
+]
+
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+for module in required_modules:
+    try:
+        __import__(module)
+    except ImportError:
+        print(f"Модуль {module} не найден. Установка...")
+        install_package(module)
+        print(f"Модуль {module} установлен.")
+    else:
+        print(f"Модуль {module} уже установлен.")
+
 from final_task.db_connection_class import DBConnection
 
 if __name__ == '__main__':
